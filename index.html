@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta name="robots" content="noindex">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="color-scheme" content="light dark">
+  <title>딥러닝 중간고사 대비</title>
+  <link rel="stylesheet" href="common/tokens.css">
+  <link rel="stylesheet" href="home/home.css">
+</head>
+<body>
+  <main class="home" id="main">
+    <header class="home-top">
+      <span class="brand">딥러닝 중간고사</span>
+      <span class="dday" id="dday" hidden></span>
+    </header>
+
+    <h1 class="greet" id="greet">오늘도 한 걸음씩 가 볼까요?</h1>
+    <p class="greet-sub" id="greet-sub">1–7주차 · 개념은 한국어로 먼저, 문제는 시험처럼 영어로 풀어요.</p>
+
+    <a class="card-row guide" href="written/#/guide">
+      <span class="row-ic is-orange" aria-hidden="true">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3.5h8.5L18 7v13.5H6z"/><path d="M14 3.5V7.5h4"/><path d="M9 12h6M9 15.5h6M9 8.5h2.5"/></svg>
+      </span>
+      <span class="row-tx"><b>시험 분석</b><span>작년 기출과 올해 공지로 본 출제 유형 · 꼭 볼 개념</span></span>
+      <svg class="chev" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg>
+    </a>
+
+    <a class="continue" id="continue" href="written/#/learn">
+      <span class="continue-eyebrow">추천 학습</span>
+      <strong id="continue-title">약한 개념부터 시작해요</strong>
+      <span class="continue-desc" id="continue-desc">모르는 개념은 쉬운 문제부터, 아는 개념은 가끔 복습만 나와요.</span>
+      <span class="continue-meter" aria-hidden="true"><i id="w-fill"></i></span>
+      <span class="continue-go" aria-hidden="true">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"/></svg>
+      </span>
+    </a>
+
+    <div class="entries">
+      <a class="entry" href="written/#/concepts">
+        <span class="entry-tag">개념 골라서</span>
+        <span class="entry-title">33개 개념 중 하나만</span>
+        <span class="entry-num"><b id="w-pct">0%</b><small>전체 숙련도</small></span>
+        <span class="meter" role="img" id="w-meter" aria-label="전체 숙련도 0%"><i id="w-fill2"></i></span>
+        <span class="entry-foot" id="w-foot">완료 0/33 개념</span>
+      </a>
+      <a class="entry" href="written/#/mock">
+        <span class="entry-tag">실전 모의고사</span>
+        <span class="entry-title">120분 · 100점</span>
+        <span class="entry-num"><b id="m-num">–</b><small id="m-unit">최근 점수</small></span>
+        <span class="meter" role="img" id="m-meter" aria-label="최근 모의고사 점수 없음"><i id="m-fill"></i></span>
+        <span class="entry-foot" id="m-foot">참/거짓 · 단계별 계산 · 서술형 · PyTorch 코드</span>
+      </a>
+    </div>
+
+    <nav class="list" aria-label="더 보기">
+      <a class="card-row" href="written/#/retry">
+        <span class="row-ic" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 12a7.5 7.5 0 1 0 2.2-5.3"/><path d="M4.5 4.5v4h4"/></svg></span>
+        <span class="row-tx"><b>오답 다시 풀기</b><span id="r-sub">아직 틀린 문제가 없어요</span></span>
+        <svg class="chev" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg>
+      </a>
+      <a class="card-row" href="written/#/wrong">
+        <span class="row-ic" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 5.5A1.5 1.5 0 0 1 6.5 4H19v14H6.5A1.5 1.5 0 0 0 5 19.5z"/><path d="M5 19.5A1.5 1.5 0 0 0 6.5 21H19"/></svg></span>
+        <span class="row-tx"><b>오답노트</b><span>마지막으로 틀린 문제를 모아 봐요</span></span>
+        <svg class="chev" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg>
+      </a>
+      <a class="card-row" href="written/#/stats">
+        <span class="row-ic" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 19V9M12 19V5M19 19v-7"/></svg></span>
+        <span class="row-tx"><b>내 학습 현황</b><span id="s-sub">유형별 정답률 · 주차별 숙련도</span></span>
+        <svg class="chev" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg>
+      </a>
+    </nav>
+
+    <section class="exam" aria-labelledby="exam-title">
+      <div class="exam-head">
+        <h2 id="exam-title">시험은 이렇게 나와요</h2>
+        <span class="exam-when">10월 20일(화) 오후 2–4시 · 강의실</span>
+      </div>
+      <ul class="exam-rows">
+        <li><span>참/거짓</span><span>틀리면 감점 <em>오답 감점</em></span></li>
+        <li><span>서술형</span><span>짧게 설명하기 (영어 시험지)</span></li>
+        <li><span>단계별 계산</span><span>순전파 · 손실 · 기울기 · 갱신</span></li>
+        <li><span>PyTorch 코드</span><span>올해 새로 들어가는 기본 코드 이해</span></li>
+      </ul>
+      <p class="exam-scope">범위: 1–7주차 · 자료 없이(closed book) · 계산기 허용, 휴대폰·노트북 금지</p>
+    </section>
+  </main>
+  <script type="module" src="home/home.js"></script>
+</body>
+</html>

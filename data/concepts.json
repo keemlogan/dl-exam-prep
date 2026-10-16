@@ -1,0 +1,268 @@
+{
+ "concepts": [
+  {
+   "id": "ml.basics",
+   "order": 0,
+   "week": 1,
+   "title_ko": "AI·머신러닝·딥러닝과 학습의 정의",
+   "title_en": "AI, ML, DL and what learning means",
+   "ref": "lec01-2 p.2–10; lec02-1 p.2–18"
+  },
+  {
+   "id": "ml.challenges",
+   "order": 1,
+   "week": 2,
+   "title_ko": "딥러닝이 필요한 이유와 '왜 지금'",
+   "title_en": "Why deep learning, why now",
+   "ref": "lec02-1 p.19–30; lec01-2 p.24"
+  },
+  {
+   "id": "linreg",
+   "order": 2,
+   "week": 2,
+   "title_ko": "선형회귀·MSE·정규방정식",
+   "title_en": "Linear regression, MSE, normal equation",
+   "ref": "lec02-4 p.2–7"
+  },
+  {
+   "id": "dl.howworks",
+   "order": 3,
+   "week": 3,
+   "title_ko": "표현 학습과 딥러닝의 작동 원리",
+   "title_en": "Representation learning and how DL works",
+   "ref": "lec03-2 p.3–13"
+  },
+  {
+   "id": "gen.overfit",
+   "order": 4,
+   "week": 3,
+   "title_ko": "일반화·과적합·과소적합·모델 용량",
+   "title_en": "Generalization, overfitting, underfitting, capacity",
+   "ref": "lec03-1 p.2–6"
+  },
+  {
+   "id": "reg.penalty",
+   "order": 5,
+   "week": 3,
+   "title_ko": "정규화: L1·L2(가중치 감쇠)와 그 밖의 기법",
+   "title_en": "Regularization: L1, L2 (weight decay) and beyond",
+   "ref": "lec03-1 p.7–11; lec05-2 p.18–20"
+  },
+  {
+   "id": "val.split",
+   "order": 6,
+   "week": 3,
+   "title_ko": "하이퍼파라미터와 훈련·검증·시험 세트",
+   "title_en": "Hyperparameters and train/validation/test sets",
+   "ref": "lec03-1 p.12–14"
+  },
+  {
+   "id": "tensor",
+   "order": 7,
+   "week": 3,
+   "title_ko": "텐서: 랭크·모양·자료형·연산",
+   "title_en": "Tensors: rank, shape, dtype, operations",
+   "ref": "lec03-3; lec05-1 p.3–5; lec02-3"
+  },
+  {
+   "id": "gd.derivative",
+   "order": 8,
+   "week": 4,
+   "title_ko": "도함수·기울기·경사하강 갱신식·학습률",
+   "title_en": "Derivative, gradient, update rule, learning rate",
+   "ref": "lec04-1 p.1–4; lec06-1 p.7–10"
+  },
+  {
+   "id": "gd.sgd",
+   "order": 9,
+   "week": 4,
+   "title_ko": "배치·확률적·미니배치 경사하강과 국소 최소",
+   "title_en": "Batch, stochastic, mini-batch GD and local minima",
+   "ref": "lec04-1 p.4–6; lec06-1 p.7–10"
+  },
+  {
+   "id": "backprop.graph",
+   "order": 10,
+   "week": 4,
+   "title_ko": "연쇄법칙·계산 그래프·자동 미분",
+   "title_en": "Chain rule, computation graph, autodiff",
+   "ref": "lec04-1 p.7–13; lec05-1 p.6–9"
+  },
+  {
+   "id": "perceptron",
+   "order": 11,
+   "week": 4,
+   "title_ko": "뉴런·퍼셉트론·결정 경계·활성화 함수",
+   "title_en": "Neuron, perceptron, decision boundary, activation",
+   "ref": "lec04-2 p.1–14"
+  },
+  {
+   "id": "mlp.xor",
+   "order": 12,
+   "week": 4,
+   "title_ko": "XOR 문제와 다층 퍼셉트론 설계",
+   "title_en": "XOR and designing a multilayer perceptron",
+   "ref": "lec04-2 p.15–19"
+  },
+  {
+   "id": "loss.functions",
+   "order": 13,
+   "week": 4,
+   "title_ko": "손실 함수: MSE·교차 엔트로피·시그모이드·소프트맥스",
+   "title_en": "Loss functions: MSE, cross-entropy, sigmoid, softmax",
+   "ref": "lec04-2 p.20–23; lec05-1 p.23"
+  },
+  {
+   "id": "backprop.mlp",
+   "order": 14,
+   "week": 4,
+   "title_ko": "MLP 순전파·역전파 손계산",
+   "title_en": "Forward and backward pass by hand (MLP)",
+   "ref": "lec04-2 p.24–31; lec06-1 p.3–6"
+  },
+  {
+   "id": "act.vanishing",
+   "order": 15,
+   "week": 4,
+   "title_ko": "기울기 소실·폭주와 ReLU",
+   "title_en": "Vanishing/exploding gradients and ReLU",
+   "ref": "lec04-2 p.32–36"
+  },
+  {
+   "id": "pt.autograd",
+   "order": 16,
+   "week": 5,
+   "title_ko": "PyTorch 텐서와 autograd",
+   "title_en": "PyTorch tensors and autograd",
+   "ref": "lec05-1 p.1–9, p.15"
+  },
+  {
+   "id": "pt.module",
+   "order": 17,
+   "week": 5,
+   "title_ko": "nn.Module·Linear·파라미터 수·logits",
+   "title_en": "nn.Module, Linear, parameter count, logits",
+   "ref": "lec05-1 p.10–15; lec05-2 p.10–12"
+  },
+  {
+   "id": "pt.data",
+   "order": 18,
+   "week": 5,
+   "title_ko": "Dataset·DataLoader·배치·에폭",
+   "title_en": "Dataset, DataLoader, batch, epoch",
+   "ref": "lec05-1 p.16–20; lec05-2 p.6–9; lec07-2 p.11–12"
+  },
+  {
+   "id": "pt.trainloop",
+   "order": 19,
+   "week": 5,
+   "title_ko": "학습 루프·train/eval·정확도·저장",
+   "title_en": "Training loop, train/eval, accuracy, saving",
+   "ref": "lec05-1 p.21–29"
+  },
+  {
+   "id": "pt.binary",
+   "order": 20,
+   "week": 5,
+   "title_ko": "이진 분류: 임베딩·BCEWithLogitsLoss·학습 곡선",
+   "title_en": "Binary classification: embedding, BCEWithLogitsLoss, curves",
+   "ref": "lec05-2 p.1–17"
+  },
+  {
+   "id": "dropout",
+   "order": 21,
+   "week": 5,
+   "title_ko": "드롭아웃",
+   "title_en": "Dropout",
+   "ref": "lec05-2 p.21–25; lec03-1 p.11"
+  },
+  {
+   "id": "optim.momentum",
+   "order": 22,
+   "week": 6,
+   "title_ko": "모멘텀과 네스테로프 모멘텀",
+   "title_en": "Momentum and Nesterov momentum",
+   "ref": "lec06-1 p.11–17"
+  },
+  {
+   "id": "optim.adaptive",
+   "order": 23,
+   "week": 6,
+   "title_ko": "적응적 학습률: AdaGrad·RMSProp·Adam",
+   "title_en": "Adaptive learning rates: AdaGrad, RMSProp, Adam",
+   "ref": "lec06-1 p.18–25"
+  },
+  {
+   "id": "optim.schedule",
+   "order": 24,
+   "week": 6,
+   "title_ko": "학습률 스케줄링과 워밍업",
+   "title_en": "Learning-rate scheduling and warmup",
+   "ref": "lec06-1 p.26–31"
+  },
+  {
+   "id": "conv.operation",
+   "order": 25,
+   "week": 6,
+   "title_ko": "합성곱 연산 손계산 (1D·2D·3D)",
+   "title_en": "Convolution by hand (1D, 2D, 3D)",
+   "ref": "lec07-1 p.2–17"
+  },
+  {
+   "id": "conv.shape",
+   "order": 26,
+   "week": 6,
+   "title_ko": "패딩·스트라이드·팽창·출력 크기·파라미터 수",
+   "title_en": "Padding, stride, dilation, output shape, parameters",
+   "ref": "lec07-1 p.18–24"
+  },
+  {
+   "id": "conv.props",
+   "order": 27,
+   "week": 6,
+   "title_ko": "희소 상호작용·파라미터 공유·등변성·수용 영역",
+   "title_en": "Sparse interactions, parameter sharing, equivariance, receptive field",
+   "ref": "lec07-1 p.5, p.25–27"
+  },
+  {
+   "id": "pooling",
+   "order": 28,
+   "week": 6,
+   "title_ko": "풀링(맥스·평균)과 이동 불변성",
+   "title_en": "Pooling (max, average) and translation invariance",
+   "ref": "lec07-1 p.28–30; lec07-2 p.7"
+  },
+  {
+   "id": "cnn.pytorch",
+   "order": 29,
+   "week": 7,
+   "title_ko": "PyTorch CNN 모양 추적과 파라미터 수",
+   "title_en": "CNN shapes and parameters in PyTorch",
+   "ref": "lec07-2 p.1–5, p.9–11"
+  },
+  {
+   "id": "cnn.smalldata",
+   "order": 30,
+   "week": 7,
+   "title_ko": "작은 데이터셋·과적합 진단·데이터 증강",
+   "title_en": "Small datasets, overfitting, data augmentation",
+   "ref": "lec07-2 p.7–22"
+  },
+  {
+   "id": "transfer",
+   "order": 31,
+   "week": 7,
+   "title_ko": "사전학습·특성 추출·동결·미세 조정 (VGG)",
+   "title_en": "Pretrained nets: feature extraction, freezing, fine-tuning",
+   "ref": "lec07-2 p.23–40"
+  },
+  {
+   "id": "resnet",
+   "order": 32,
+   "week": 7,
+   "title_ko": "잔차 블록과 ResNet",
+   "title_en": "Residual blocks and ResNet",
+   "ref": "lec07-2 p.40–46"
+  }
+ ]
+}

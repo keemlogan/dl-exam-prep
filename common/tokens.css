@@ -1,0 +1,77 @@
+/* Shared design tokens — Toss-style UI, light and dark (follows the system setting). */
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css");
+
+:root {
+  --blue-50: #e8f3ff; --blue-100: #c9e2ff; --blue-400: #4593fc; --blue-500: #3182f6; --blue-600: #2272eb; --blue-700: #1b64da;
+  --grey-50: #f9fafb; --grey-100: #f2f4f6; --grey-200: #e5e8eb; --grey-300: #d1d6db; --grey-400: #b0b8c1;
+  --grey-500: #8b95a1; --grey-600: #6b7684; --grey-700: #4e5968; --grey-800: #333d4b; --grey-900: #191f28;
+  --red-50: #ffeeee; --red-500: #f04452; --red-600: #e42939;
+  --green-50: #f0faf6; --green-500: #03b26c; --green-600: #02a262;
+  --orange-50: #fff3e0; --orange-500: #fe9800; --orange-text: #c25e00; --orange-deep: #8a4b00;
+  --purple-500: #a234c7;
+
+  --bg: #ffffff;
+  --bg-sub: var(--grey-100);
+  --surface: #ffffff;
+  --surface-2: var(--grey-50);
+  --text-strong: var(--grey-900);
+  --text: var(--grey-800);
+  --text-sub: var(--grey-600);
+  --text-hint: var(--grey-500);
+  --line: var(--grey-200);
+  --primary: var(--blue-500);
+  --primary-press: var(--blue-600);
+  --primary-weak: var(--blue-50);
+  --on-primary: #ffffff;
+  --success: var(--green-500);
+  --success-weak: var(--green-50);
+  --danger: var(--red-500);
+  --danger-weak: var(--red-50);
+  --warn: var(--orange-500);
+  --warn-weak: var(--orange-50);
+  --tip-bg: #191f28;
+  --scrim: rgba(0, 23, 51, 0.28);
+
+  --radius-s: 8px; --radius-m: 14px; --radius-l: 20px; --radius-xl: 28px;
+  --shadow-card: 0 2px 8px rgba(0, 23, 51, 0.04);
+  --shadow-sheet: 0 -8px 32px rgba(0, 23, 51, 0.12);
+  --font: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Noto Sans KR", sans-serif;
+  --mono: "JetBrains Mono", "SF Mono", Menlo, Consolas, monospace;
+  --ease: cubic-bezier(0.2, 0, 0, 1);
+  --cta-h: 56px;
+
+  color-scheme: light;
+}
+
+/* Dark: the grey ramp is inverted (as in Toss's dark mode), tints become deep washes, text colours lighten. */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --blue-50: #172a46; --blue-100: #22406b; --blue-400: #5aa0ff; --blue-500: #3d8bff; --blue-600: #2f7af0; --blue-700: #9cc4ff;
+    --grey-50: #24242c; --grey-100: #2c2c35; --grey-200: #3a3a45; --grey-300: #4b4b57; --grey-400: #63636e;
+    --grey-500: #858590; --grey-600: #a2a2ab; --grey-700: #c4c4ca; --grey-800: #e1e1e5; --grey-900: #f8f8fa;
+    --red-50: #3b1d23; --red-500: #ff5f6d; --red-600: #ff8f99;
+    --green-50: #12302a; --green-500: #1ec27e; --green-600: #4fd8a0;
+    --orange-50: #3a2a12; --orange-500: #ffa53a; --orange-text: #ffb760; --orange-deep: #ffcf94;
+
+    --bg: #17171c;
+    --bg-sub: #101013;
+    --surface: #1e1e25;
+    --surface-2: #24242c;
+    --tip-bg: #383843;
+    --scrim: rgba(0, 0, 0, 0.55);
+    --shadow-card: none;
+    --shadow-sheet: 0 -8px 32px rgba(0, 0, 0, 0.5);
+    color-scheme: dark;
+  }
+}
+
+html, body { margin: 0; background: var(--bg); color: var(--text); font-family: var(--font);
+  -webkit-font-smoothing: antialiased; word-break: keep-all; }
+*, *::before, *::after { box-sizing: border-box; }
+button { font: inherit; }
+
+/* Show code exactly as typed: no programming ligatures (== must not become one long bar, <= must not become ≤). */
+code, pre, kbd, samp, textarea, [class*="code"], .num-in, .calc-in {
+  font-variant-ligatures: none;
+  font-feature-settings: "liga" 0, "calt" 0;
+}
