@@ -28,15 +28,12 @@ const HAS_SERVER = false;
 /** status: "off" (no token) | "ok" | "error"; base[name] = cloud saved_at this device last saw or wrote. */
 export const cloud = { status: "off", base: {}, at: 0 };
 
+// ?k= stays in the address bar on purpose: iOS "Add to Home Screen" saves the current URL, and a home-screen
+// app has its own storage, so the icon has to carry the token to sync.
 (function captureToken() {
   try {
-    const qs = new URLSearchParams(location.search);
-    const k = qs.get("k");
-    if (!k) return;
-    localStorage.setItem(TOKEN_KEY, k);
-    qs.delete("k");
-    const q = qs.toString();
-    history.replaceState(null, "", location.pathname + (q ? `?${q}` : "") + location.hash);
+    const k = new URLSearchParams(location.search).get("k");
+    if (k) localStorage.setItem(TOKEN_KEY, k);
   } catch { /* no window (tests) / private mode */ }
 })();
 
@@ -60,6 +57,21 @@ function syncToken() {
     } catch { /* offline */ }
     return null;
   })());
+}
+
+/** Turn sync on from a pasted token or sync link; true when the cloud accepts it. */
+export async function enableSync(input) {
+  const text = String(input || "").trim();
+  const token = (text.match(/[?&]k=([0-9a-f]+)/i) || [])[1] || text;
+  if (!/^[0-9a-f]{16,}$/i.test(token)) return false;
+  try {
+    await rpc("dl_exam_progress_get", { p_token: token, p_name: "written" });
+  } catch {
+    return false; // wrong token (or offline)
+  }
+  try { localStorage.setItem(TOKEN_KEY, token); } catch { return false; }
+  tokenP = null;
+  return true;
 }
 
 async function rpc(fn, args) {

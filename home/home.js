@@ -1,7 +1,7 @@
 import { ROOT } from "../common/api.js";
 // Home: D-day, greeting, 시험 분석, 추천 학습 (continue), entry cards. Numbers come from the same functions
 // the trainer uses (engine.summarize), so both pages agree.
-import { cloud, dDay } from "../common/api.js";
+import { cloud, dDay, enableSync } from "../common/api.js";
 import { masteryOf, summarize, wrongList } from "../written/engine.js";
 import { shortTitle } from "../written/render.js";
 import { loadBank, loadSaved } from "../written/store.js";
@@ -23,16 +23,38 @@ function setContinue(title, desc, href) {
   if (href) $("continue").href = href;
 }
 
-/** Cloud sync state from common/api.js, so it is clear whether progress follows to the other device. */
+/** Cloud sync state from common/api.js, so it is clear whether progress follows to the other device.
+ *  When it is off (e.g. a new home-screen icon), the sync link or token can be pasted right here. */
 function showSync() {
   const el = $("sync");
   el.hidden = false;
   el.classList.toggle("is-off", cloud.status !== "ok");
-  el.textContent = cloud.status === "ok"
-    ? "진도가 맥·휴대폰 어디서 풀든 함께 저장돼요"
-    : cloud.status === "error"
-      ? "지금은 동기화 서버에 연결되지 않아 이 기기에만 저장 중이에요 (연결되면 다시 올라가요)"
-      : "이 기기는 동기화가 꺼져 있어요 · 맥에서 받은 동기화 링크로 한 번 열어 주세요";
+  if (cloud.status === "ok") {
+    el.textContent = "진도가 맥·휴대폰 어디서 풀든 함께 저장돼요";
+    return;
+  }
+  el.textContent = cloud.status === "error"
+    ? "지금은 동기화 서버에 연결되지 않아 이 기기에만 저장 중이에요 (연결되면 다시 올라가요)"
+    : "이 기기는 동기화가 꺼져 있어요 · 동기화 링크나 키를 붙여 넣어 켜 주세요";
+  if (cloud.status === "error") return;
+  const form = document.createElement("form");
+  form.className = "sync-form";
+  form.innerHTML = '<input id="sync-input" type="text" inputmode="url" autocomplete="off" autocapitalize="off" ' +
+    'spellcheck="false" placeholder="https://…?k=… 또는 키" aria-label="동기화 링크 또는 키">' +
+    '<button type="submit">켜기</button>';
+  const msg = document.createElement("span");
+  msg.className = "sync-msg";
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    msg.textContent = "확인 중…";
+    if (await enableSync($("sync-input").value)) {
+      msg.textContent = "켜졌어요. 진도를 불러올게요";
+      location.reload();
+    } else {
+      msg.textContent = "키가 맞지 않아요. 링크 전체를 다시 붙여 넣어 주세요";
+    }
+  });
+  el.append(form, msg);
 }
 
 async function main() {
